@@ -1,0 +1,111 @@
+
+
+        <!-- page content -->
+        <div class="left_col" role="main">
+          <div class="">
+            <div class="page-title">
+               
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    
+                    <div><h4>{{addMyUsers}}<small></small></h4> 
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <!-- <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+                   <h2 ng-show="myCheck"></h2> -->
+                  
+                     <p align="center" ng-show="successMsg==1"> <span  class=" glyphicon glyphicon-ok icon-success    "  >{{message}}</span>
+                     </p>
+                      <p align="center" ng-show="successMsg==2"> <span  class=" glyphicon glyphicon-pencil " style="color: red" >Please properly fill all the recquired fields!!   {{successMsg}} </span>
+                     </p>
+                   
+                    
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" name="addUserForm" novalidate>
+                    
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="firstname" name="firstname" ng-model="user.firstname" required class="form-control col-md-7 col-xs-12" required>
+                          <span ng-show="addUserForm.firstname.$error.required"> First name should not be empty!</span>
+                           
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="lastname" name="lastname" ng-model="user.lastname" required="required" class="form-control col-md-7 col-xs-12">
+                          <span ng-show="addUserForm.lastname.$error.required"> Last name should not be empty!</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Email Address</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="email"  ng-model="user.email" name="email" class="form-control col-md-7 col-xs-12" type="email" required="">
+                           <span ng-show="addUserForm.email.$error.required"> Last name should not be empty!</span>
+                           <span ng-show="addUserForm.email.$error.email"> Not a valid email!</span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Username</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="username" name="username" ng-model="user.username" class="form-control col-md-7 col-xs-12" type="text" required >
+                        </div>
+                        <span ng-show="addUserForm.username.$error.required"> User name should not be empty!</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="password" name="password" ng-model="user.password" class="form-control col-md-7 col-xs-12" type="password" required >
+                          <span ng-show="addUserForm.password.$error.required"> Password recquired!</span>
+                           <span ng-show="addUserForm.password.$error.password"> Not a valid Password!</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Access Level</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select  name="access" ng-model="user.access"  class="select2_single form-control" tabindex="-1" required>
+                            <option></option>
+                            <option value="super admin">Super Admin</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                           
+                          </select>
+                          <span ng-show="addUserForm.access.$error.required"> Select user access level!</span>
+                           
+                        </div>
+                      </div>
+                      <div>
+                        <input type="hidden" name="createdby"  ng-model="user.createdby" value={{userGroup}}>
+                      </div>
+                      
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button">Cancel</button>
+						             <button class="btn btn-primary" type="reset">Reset </button>{{user}}
+                          <button  class="btn btn-success" ng-click="addUsers()">Submit </button>
+                        </div>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /page content -->

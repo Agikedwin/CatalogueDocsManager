@@ -1,0 +1,148 @@
+   <!-- page content -->
+        <div class=left_col" role="main">
+          <div class="">
+            
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                 
+                  <div class="x_content">
+                  <div class="title_right">
+                <div class="col-md-3 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" ng-model="searchValue" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+                    <div><h3>{{title}}</h3></div>
+
+                    <div class="panel panel-primary">
+                      <div class="panel-body"> 
+                      <div ng-show="isLoading" style="color: red">
+                        <span class="glyphicon glyphicon-time"></span>Loading...
+                      </div>
+                     <div ng-show="!isLoading">                       
+                  
+                    <table id="datatable" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Source</th>
+                          <th>Destination</th>
+                          <th>Urgency</th>
+                          <th>Classification</th>
+                          <th>Actual file</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        <tr dir-paginate="view in fileUpload |  itemsPerPage:2 | filter : searchValue  | filter : filterType  ">
+
+                        <td>{{view.filename}}</td>
+                        <td >{{view.source}}</td>
+                        <td>{{view.destination}}</td>
+                        <td>{{view.urgency}}</td>
+                        <td>{{view.classification}}</td>
+                        
+                          
+                         <td ><a href="fileUpload/{{view.name}}" data-toggle="modal" data-target="#myModalPlay{{$index}}"    >{{view.name}}</a> 
+                          
+                           <a href="#" ng-show="view.state==1"> 
+                        <span class="glyphicon glyphicon-eye-open" style="color: black"><i><font color="red">Pending</font></i></span>
+                         </a>
+                         <a href="#" ng-show="view.state==0"> 
+                        <span class="glyphicon glyphicon-ok" style="color:green"></span>
+                         </a>
+                           <!--<span><button>{{view.state==1 ? 'New' : ''}}</button></span>-->
+                          <!--
+                         <button class="btn btn-warning" ng-click="changeStatus(view._id)">seen{{view._id}}</button>-->
+                           <!-- Modal -->
+                            <div class="modal fade" id="myModalPlay{{$index}}" role="dialog">
+                              <div class="modal-dialog">
+                              
+                                <!-- Modal content display description-->
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><b>{{view.name}}</b> ||  
+
+                                      Classified as:<i style="color:blue"> {{view.classification}}</i> And <i>{{view.urgency}}</i>  </h4>
+                                   
+                                  </div>
+                                  <div class="modal-body"  >
+
+          
+          <p>
+               <audio controls="controls" height="20" width="20" ng-show="showAudioTag(view.name)">
+              <source ng-src={{relativeUploadDir(view.name)}}>
+                </audio>
+
+                <video  class="videoPlayer" id="playvid" preload="metadata" vg-poster="data.poster" controls="controls"  height="300" width="500" ng-show="showVideoTag(view.name)" >
+                <source ng-src={{relativeUploadDir(view.name)}}   type="video/MP4" >
+                </video><span></span>
+
+                <a href="uploads/{{view.name}}" ng-show="showDocumentsTag(view.name)" target="_blank" >
+                 
+                 <object data="uploads/{{view.name}}#view=Fit" type="application/pdf" width="100%" height="650">
+    <p>
+        It appears your Web browser is not configured to display PDF files. No worries, just <a href="uploads/others/{{view.name}}">click here to download the PDF file.</a>
+    </p>
+</object>
+
+                </a>
+
+                <a href="uploads/{{view.name}}" ng-show="showImageTag(view.name)" target="_blank" >
+                  <img src="uploads/{{view.name}}"  alt="image" width="550" height="300">
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <div>
+            <p style="color: blue; font-size:15px">
+           From <b style="color:black"> {{view.source}}</b> To <b style="color:black">  {{view.source}}</b>
+            </P>
+
+          </div>
+          <a href="indexView.html">
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+        </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+                         </td> 
+
+
+                        </td>
+
+                         
+                        </tr>
+                        
+                       
+                      </tbody>
+                    </table>
+                     
+                       </div>
+                     </div>
+                    </div>
+                   
+                  </div>
+                
+            </div>
+            <dir-pagination-controls></dir-pagination-controls>
+          </div>
+        </div>
+        </div>
+        </div>
+        <!-- /page content -->
+
+       

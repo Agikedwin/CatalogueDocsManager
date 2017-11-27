@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html ng-app="mylogin">
+
+  <head>
+    <meta charset="utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+
+  <body ng-controller="TestController">
+  
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-xs-offset-3 col-xs-5">
+        <div ng-show="showLoginStatus==false" class="alert alert-danger">{{showLoginMsg}}</div>
+
+<div ng-show="error" class="alert alert-danger">{{error}}</div>
+
+
+<div ng-show="status==1" class="alert alert-danger">{{message}}</div>
+<div ng-show="status==2" class="alert alert-success">{{message}}</div>
+<form name="form"  role="form">
+    <div class="form-group">
+        <label for="username">Current Username</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="username" id="username" class="form-control" ng-model="user.username" required />
+        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+    </div>
+    <div class="form-group">
+        <label for="password">Current Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required />
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+    </div>
+    <div class="form-group">
+        <label for="username">New Username</label>
+        <i class="fa fa-key"></i>
+        <input type="text" name="newusername" id="newusername" class="form-control" ng-model="user.newusername" 
+        class="form-control col-md-7 col-xs-12"required />
+        <span ng-show="form.newusername.$dirty && form.newusername.$error.required" class="help-block">new username is required</span>
+    </div>
+    <div class="form-group">
+        <label for="password">New Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" name="newpassword" id="newpassword" class="form-control" ng-model="user.newpassword" required />
+        <span ng-show="form.newpassword.$dirty && form.newpassword.$error.required" class="help-block">Password is required</span>
+    </div>
+    <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <i class="fa fa-lock"></i>
+        <input type="password" name="conpassword" id="conpassword" class="form-control" ng-model="user.conpassword" required />
+        <span ng-show="form.conpassword.$dirty && form.conpassword.$error.required" class="help-block">confirm password is required</span>
+    </div>
+    <div class="form-actions">
+        <button ng-click="validate()" ng-disabled="form.$invalid || dataLoading" class="btn btn-danger">Login</button>
+        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+    </div>
+
+</form>
+
+<div>
+
+<a  class="pull-right" href="" ng-click="loginPage()" > <p> Log me in!!!</p> </a>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="controllers/services/authService.js"></script>
+    <script src="controllers/login.js"></script>
+   
+   
+  </body>
+
+</html>

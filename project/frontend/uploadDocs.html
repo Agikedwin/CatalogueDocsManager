@@ -1,0 +1,139 @@
+
+<!-- page content -->
+<div class="left_col" role="main">
+  <div class="">
+    
+   
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="x_panel">
+          
+          <form class="form-horizontal form-label-left" enctype="multipart/form-data" action="uploadfile" method="post" novalidate name="myform">
+
+            <span class="section"> </span>
+
+            <div class="item form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">File Name <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="filename"  ng-model="docs.name" placeholder="both name(s) e.g Jon Doe"  type="text" required>
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Description <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <textarea id="textarea"  name="description" ng-model="docs.description"  class="form-control col-md-7 col-xs-12" required></textarea>
+              </div>
+            </div>
+            
+            <div class="item form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Type</label>
+             <div class="col-md-6 col-sm-6 col-xs-12">
+               <select    name="filetype" ng-model="docs.filetype"  class="form-control"  class="form-control col-md-7 col-xs-12" required>
+                 <div> <option value=""  >Select...</option>
+                  <option value="document" >Document</option>
+                  <option value="image" >Image</option>
+                  <option value="audio"  >Audio</option>
+                  <option value="video">Video</option>
+                </div></select>
+              </div>
+            </div><!--End form Group-->
+            <div class="item form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Classification</label>
+             <div class="col-md-6 col-sm-6 col-xs-12">
+               <select    name="classification" ng-model="docs.classification" class="form-control" required class="form-control col-md-7 col-xs-12" required>
+                 <div> <option value=""  >Select...</option>
+                  <option value="restricted" >Restricted</option>
+                  <option value="confidential" >Confidential</option>
+                  <option value="secret " >Secret </option>
+                  <option value="topsecret" >Top Secret</option>
+                </div></select>
+              </div>
+            </div><!--End form Group-->
+            <div class="item form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Nature</label>
+             <div class="col-md-6 col-sm-6 col-xs-12">
+               <select    name="nature" ng-model="docs.nature" class="form-control" required class="form-control col-md-7 col-xs-12" required>
+                 <div> <option value=""  >Select...</option>
+                  <option value="HUMINT" > HUMINT </option>
+                  <option value="GEOINT" >GEOINT</option>
+                  <option value="MASINT" >MASINT</option>
+                  <option value="OSINT" >OSINT</option>
+                  <option value="SIGINT" >SIGINT</option>
+                  <option value="TECHINT" >TECHINT</option>
+                  <option value="CYBINT/DNINT" >CYBINT/DNINT</option>
+                  <option value="FININT" >FININT</option>
+                  <option value="AERIAL SURVEILLAN" >AERIAL SURVEILLAN</option>
+                </div></select>
+              </div>
+            </div><!--End form Group-->
+            <div class="item form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Source <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input  type="text" name="source" name="source" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" required>
+              </div>
+            </div>
+            <div class="item form-group">
+              <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Destination</label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input id="password" type="text"   ng-model="destination" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required>
+              </div>
+            </div>
+            <div class="item form-group">
+             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Urgency Level</label>
+             <div class="col-md-6 col-sm-6 col-xs-12">
+               <select    name="urgency" ng-model="urgency" class="form-control"  required class="form-control col-md-7 col-xs-12" required>
+                 <div> <option value=""  >Select...</option>
+                  <option value="Low" >Low </option>
+                  <option value="Normal" >Normal</option>
+                  <option value="Critical" >Critical</option>
+                </div></select>
+              </div>
+            </div><!--End form Group-->
+            <div class="item form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="file">Choose File<span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type = "file"  name="upload" ng-model="upload"  ng-click="resetProgressBar()" class="form-control col-md-7 col-xs-12" >
+              </div>
+            </div>
+            <div>
+              <input type="hidden" name="username" value={{loggedUser}}>
+               <input type="hidden" name="usergroup" value={{userGroup}}>
+            </div>
+            
+            <div  >
+              <p align="center" style="color: green" ng-show="showProgress==2"> {{status}}<span  class=" glyphicon glyphicon-upload " style="color: red" >
+              </span>
+            </p>
+            <div ng-show="showProgress==2">
+             <progress id="myBar"  max="100" value="{{progress}}"></progress><span> {{progress}}%</span>
+           </div>
+           <p align="center" style="color: green" ng-show="showProgress==1"> File Successfully uploaded <span  class=" glyphicon glyphicon-ok " style="color: red" >
+           </span>
+         </p>
+         
+       </div>
+
+       
+       
+       <div class="ln_solid"></div>
+       <div class="form-group">
+        <div class="col-md-6 col-md-offset-3">
+          <button type="submit" ng-click="join()" class="btn btn-primary">test Io</button>
+          <button id="send"  ng-click="addDocument()" class="btn btn-success">Submit</button>
+
+          
+        </div>
+      </div>
+    </form>
+
+  </div>
+  
+</div>
+</div>
+</div>
+</div>

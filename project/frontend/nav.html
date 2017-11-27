@@ -1,0 +1,93 @@
+ <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+
+
+
+
+          <!-- sidebar menu -->
+          <div  id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h5>Menu</h5>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> Home {{500 + 3000}}</a> </li>                 
+
+                <li><a><i class="fa fa-edit"></i> View  <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a ui-sref="viewDocs">All</a></li>
+                    <li><a ui-sref="viewDocs">Documents</a></li>
+                    <li><a ui-sref="viewDocs">Photos</a></li>                      
+                    <li><a ui-sref="viewDocs">Audios</a></li>
+                    <li><a ui-sref="viewDocs">Videos</a></li>
+                    <li><a ui-sref="viewDocs">Others</a></li>
+                  </ul>
+
+                </li>
+                <li><a><i class="fa fa-desktop"></i> Upload Files <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                   <li><a href="#uploadDocs"> Upload </a></li>
+
+                 </ul>
+               </li>
+               <li><a><i class="fa fa-table"></i> Users <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                 <li><a ui-sref="addUsers"> Add User </a></li>
+                 <li><a ui-sref="getUsers">View Users</a></li>
+                 <li><a ui-sref="manageUsers">Manage Users</a></li>
+                 <li><a ui-sref="UserProfile">User Profile</a></li>
+               </ul>
+             </li>
+             <li><a><i class="fa fa-bar-chart-o"></i>Operations <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu">
+                <li><a ui-sref="uploadDocs">Edit File</a></li>
+                <li><a ui-sref="viewDocs">Archieved files</a></li>
+
+              </ul>
+            </li>
+            <li><a><i class="fa fa-clone"></i>Profiles <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu">
+                <li><a ui-sref="addUsers">My profile</a></li>
+                <li><a ui-sref="login">login</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="menu_section">
+
+          <ul class="nav side-menu">
+
+
+
+            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Alerts <span class="label label-success pull-right">Coming Soon</span></a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /sidebar menu -->
+
+
+    </div>
+  </div>
+
+  <!-- top navigation -->
+  <div class="top_nav">
+    <div class="nav_menu">
+      <nav>
+        <div class="nav toggle">
+          <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="">
+            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <img src="images/img.jpg" alt="">John Doe
+              <span class=" fa fa-angle-down"></span>
+            </a>
+
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->

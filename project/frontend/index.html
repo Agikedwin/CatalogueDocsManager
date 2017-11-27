@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html ng-app="mylogin">
+<head>
+  <meta charset="UTF-8">
+  <title>Login </title>
+
+   
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+  <script src="resouces/angular-jwt/dist/angular-jwt.min.js"></script>
+
+  
+      <link rel="stylesheet" href="login/css/style.css">
+
+
+    <script src="controllers/services/authService.js"></script>
+    <script src="controllers/login.js"></script>
+
+  
+</head>
+
+<body ng-controller="TestController">
+  <div class="wrap">
+    <div class="avatar">
+      <img src="login/image/profile.JPG">
+    </div>
+    <input type="text" placeholder="username" name="username" id="username" class="form-control" ng-model="user.username" required>
+
+    <div class="bar">
+      <i></i>
+    </div>
+    
+    <input type="password" placeholder="password" name="password" id="password" class="form-control" ng-model="user.password"  required>
+    <a href="" ng-click="authenticate()" ><img class="loginImage" src="login/image/log1.png"></a>
+    <!-- <a href="" class="forgot_link">Reset</a> -->
+    
+    <div ng-show="showLoginStatus==false" class="loginMsg">
+     <p>{{showLoginMsg}}</p> 
+    </div>
+    <div ng-show="showLoginStatus==true" class="loginMsg1">
+     <p>{{showLoginMsg}}</p> 
+    </div>
+
+  
+  </div>
+
+
+
+
+   
+   
+  </body>
+
+</html>

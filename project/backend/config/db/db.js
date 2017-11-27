@@ -1,0 +1,105 @@
+{
+	"_id" : ObjectId("5911b25d3e21813fecfcc13b"),
+	"classification" : "restricted",
+	"dateuploaded" : "2017-05-09",
+	"deleted" : NumberInt("0"),
+	"description" : "my test user      ",
+	"destination" : "edu",
+	"name" : "test use",
+	"nature" : "GEOINT",
+	"source" : "edu",
+	"state" : NumberInt("1"),
+	"type" : "document",
+	"upload" : {
+		"size" : NumberInt("1741086"),
+		"path" : "F:\\mydocs/public/uploads/DSC_2360.JPG",
+		"name" : "DSC_2360.JPG",
+		"type" : "image/jpeg",
+		"mtime" : "2017-05-09T12:13:17.224Z"
+	},
+	"urgency" : "Low"
+},
+{
+	"_id" : ObjectId("5911b2d43e21813fecfcc13c"),
+	"classification" : "secret ",
+	"dateuploaded" : "2017-05-09",
+	"deleted" : NumberInt("0"),
+	"description" : "my admin      ",
+	"destination" : "wilson",
+	"name" : "test admin",
+	"nature" : "AERIAL SURVEILLAN",
+	"source" : "ppp",
+	"state" : NumberInt("1"),
+	"type" : "audio",
+	"upload" : {
+		"size" : NumberInt("24643795"),
+		"path" : "F:\\mydocs/public/uploads/Lady Maureen   Raila Duog Dala.mp3",
+		"name" : "Lady Maureen   Raila Duog Dala.mp3",
+		"type" : "audio/mp3",
+		"mtime" : "2017-05-09T12:15:16.605Z"
+	},
+	"urgency" : "Normal"
+},
+{
+	"_id" : ObjectId("5911b39b3e21813fecfcc13d"),
+	"classification" : "confidential",
+	"dateuploaded" : "2017-05-09",
+	"deleted" : NumberInt("0"),
+	"description" : "my super admin docs      ",
+	"destination" : "wilson",
+	"name" : "test super admin",
+	"nature" : "CYBINT/DNINT",
+	"source" : "agik",
+	"state" : NumberInt("1"),
+	"type" : "video",
+	"upload" : {
+		"size" : NumberInt("40343238"),
+		"path" : "F:\\mydocs/public/uploads/testvideo.mp4",
+		"name" : "testvideo.mp4",
+		"type" : "video/mp4",
+		"mtime" : "2017-05-09T12:18:35.710Z"
+	},
+	"urgency" : "Critical"
+},
+{
+	"_id" : ObjectId("5911b4713e21813fecfcc13e"),
+	"classification" : "secret ",
+	"dateuploaded" : "2017-05-09",
+	"deleted" : NumberInt("0"),
+	"description" : "my test       ",
+	"destination" : "wilson",
+	"name" : "my test",
+	"nature" : "AERIAL SURVEILLAN",
+	"source" : "ppp",
+	"state" : NumberInt("1"),
+	"type" : "image",
+	"upload" : {
+		"size" : NumberInt("113529"),
+		"path" : "F:\\mydocs/public/uploads/database.PNG",
+		"name" : "database.PNG",
+		"type" : "image/png",
+		"mtime" : "2017-05-09T12:22:09.632Z"
+	},
+	"urgency" : "Normal"
+},
+{
+	"_id" : ObjectId("5911b4fd3e21813fecfcc13f"),
+	"classification" : "topsecret",
+	"dateuploaded" : "2017-05-09",
+	"deleted" : NumberInt("0"),
+	"description" : "      top secret",
+	"destination" : "wilson",
+	"name" : "top",
+	"nature" : "AERIAL SURVEILLAN",
+	"source" : "ppp",
+	"state" : NumberInt("0"),
+	"type" : "document",
+	"upload" : {
+		"size" : NumberInt("433994"),
+		"path" : "F:\\mydocs/public/uploads/pdf.pdf",
+		"name" : "pdf.pdf",
+		"type" : "application/pdf",
+		"mtime" : "2017-05-09T12:24:29.638Z"
+	},
+	"urgency" : "Critical"
+},
